@@ -1,3 +1,7 @@
+var LINK_SELECTOR = '.menu-item a';
+var SECTION_SELECTOR = '.section';
+var DEFAULT_PAGE = '#supplier'
+
 function select(query) {
     return Array.from(document.querySelectorAll(query));
 }
@@ -10,21 +14,28 @@ function show(elem) {
     elem.style.display = 'block';
 }
 
-function hideAll() {
-    select('.section').forEach(hide);
+function setClass(className) {
+    return function(elem) {
+        elem.className = className;
+    }
 }
 
 function showPage(pageName) {
-    hideAll();
     window.location.hash = '#' + pageName;
-    select('.' + pageName + '-section').forEach(show);
+    select(SECTION_SELECTOR).forEach(hide);
+    select(LINK_SELECTOR).forEach(setClass(''));
+    select('.' + pageName + '-section').forEach(show)
+    select('*[href="#' + pageName + '"]').forEach(setClass('active'));
+
 }
 
 window.onload = function() {
-    var pageName = (window.location.hash || "#supplier").substr(1);
+    window.scrollTo(0, 0);
+
+    var pageName = (window.location.hash || DEFAULT_PAGE).substr(1);
     showPage(pageName);
 
-    select('.menu-item a').forEach(function(item) {
+    select(LINK_SELECTOR).forEach(function(item) {
         item.onclick = function(e) {
             var pageName = this.href.split('#')[1];
             showPage(pageName);

@@ -136,6 +136,11 @@ p {
     padding: 2rem;
 }
 
+a.active {
+    border-bottom: 0;
+    cursor: default;
+}
+
 @media only screen and (max-width: 1080px) {
     .logo { width: 16.666%; }
     .links { font-size: 22px; }
