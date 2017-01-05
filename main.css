@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    font-weight: normal;
+    padding: 1em 0 0.25em;
+    font-size: 32px;
+}
+
+ul {
+    padding-left: 1.5em;
+    padding-bottom: 1em;
+}
+
+li {
+    padding: 0.25em 0;
+}
+
+p {
+    padding: 0.5em 0;
+}
+
+/* 
+1    8.333
+2   16.666
+3   25
+4   33.333
+5   41.666
+6   50
+7   58.333
+8   66.666
+9   75
+10   83.333
+11   92.666
+12   100
+*/
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #50a6a6;
+    padding: 1rem 0;
+}
+    .logo {
+        width: 8.333%;
+        padding-left: 2rem;
+        padding-right: 1rem;
+    }
+        .logo img {
+            width: 100%;
+            max-height: 65px;
+            max-width: 70px;
+        }
+
+    .links {
+        width: 66.666%;
+        display: flex;
+        font-size: 26px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        flex-wrap: wrap;
+    }
+        .menu-item {
+            padding: 0 0.5rem;
+        }
+        .links a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #000;
+        }
+        .links a:hover {
+            border-bottom: 0;
+        }
+
+    .phone {
+        padding-right: 2rem;
+        white-space: nowrap;
+        font-size: 28px;
+        width: 25%;
+        text-align: right;
+    }
+
+.section {
+    padding: 0 2rem 2rem;
+    flex: 1;
+}
+
+.row-5 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cell-5 {
+    width: 20%;
+}
+
+.customer-section {
+    padding-top: 2rem;
+}
+
+    .about-section h1 {
+        text-align: center;
+    }
+    .point-box {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .partners {
+        padding-top: 2rem;
+    }
+        .partners a {
+            text-align: center;
+            padding: 1rem;
+        }
+            .partners a img {
+                max-height: 10em;
+            }
+
+.footer {
+    background-color: #50a6a6;
+    padding: 2rem;
+}
+
+@media only screen and (max-width: 1080px) {
+    .logo { width: 16.666%; }
+    .links { font-size: 22px; }
+    .phone { width: 16.666%; font-size: 22px; }
+}
+@media only screen and (max-width: 768px) {
+    .logo { display: none; }
+    .links { width: 66.666%; font-size: 18px; }
+        .menu-item { width: 50%; }
+    .phone { width: 33.333%; font-size: 18px; }
+    .cell-5 { width: 50% }
+}
+@media only screen and (max-width: 567px) {
+    .logo { display: none; }
+    .links { width: 100%; font-size: 18px; }
+        .menu-item { width: 100%; }
+    .phone { width: 100%; text-align: left; padding: 1em 1.7rem 0; }
+    .cell-5 { width: 100% }
+}
