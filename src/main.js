@@ -26,11 +26,10 @@ function showPage(pageName) {
     select(LINK_SELECTOR).forEach(setClass(''));
     select('.' + pageName + '-section').forEach(show)
     select('*[href="#' + pageName + '"]').forEach(setClass('active'));
-
+    window.scrollTo(0, 0);
 }
 
 window.onload = function() {
-    window.scrollTo(0, 0);
 
     var pageName = (window.location.hash || DEFAULT_PAGE).substr(1);
     showPage(pageName);
